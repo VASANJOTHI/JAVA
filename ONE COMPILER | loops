@@ -1,0 +1,262 @@
+
+QUESTION 1 :
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      Scanner s = new Scanner(System.in);
+      int a = s.nextInt();
+      int b = s.nextInt();
+      int hcf = findHCF(a,b);
+      int lcm = (a==0||b==0)?0:(a*b)/hcf;
+      System.out.println(hcf);
+      System.out.println(lcm);
+  }
+  public static int findHCF(int x,int y){
+    while(y!=0){
+    int temp=y;
+    y=x%y;
+    x=temp;
+    }
+      return x;
+    }
+  
+}
+
+**********************************************************************************
+
+QUESTION 2 :
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner s = new Scanner(System.in);
+      int n = s.nextInt();
+      int sum=0,a=0;
+      while(n!=0){
+        a=n%10;
+        sum+=a;
+        n/=10;
+      }
+      System.out.println(sum);
+  }
+}
+
+**********************************************************************************
+
+QUESTION 3 :
+
+import java.util.Scanner;
+
+public class EvenDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        sc.close();
+
+        String numStr = String.valueOf(number);
+        boolean foundEven = false;
+
+        for (int i = 0; i < numStr.length(); i++) {
+            int digit = numStr.charAt(i) - '0';
+            if (digit % 2 == 0) {
+                System.out.println(digit);
+                foundEven = true;
+            }
+        }
+
+        if (!foundEven) {
+            System.out.println(-1);
+        }
+    }
+}
+
+**********************************************************************************
+
+QUESTION 4 :
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner s = new Scanner(System.in);
+      int n = s.nextInt();
+      int rev=0,b=n,a=0;
+      while(b!=0){
+        a=b%10;
+        rev=(rev*10)+a;
+        b/=10;
+      }
+      if(rev==n)
+      System.out.println("YES");
+      else
+      System.out.println("NO");
+  }
+}
+
+*********************************************************************************
+
+QUESTION 5 :
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner s = new Scanner(System.in);
+      int n = s.nextInt();
+      int count=0,b=0;
+      while(n!=0){
+        b=n%10;
+        if(b==0)
+        count++;
+        n/=10;
+      }
+      System.out.println(count);
+      
+  }
+}
+
+***********************************************************************************
+
+QUESTION 6 :
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner s = new Scanner(System.in);
+      int u = s.nextInt();
+      int l = s.nextInt();
+      int count=0;
+      for(int i=u+1;i<l;i++){
+        count=0;
+        for(int j=1;j<=i;j++){
+          if(i%j==0){
+          count++;
+          }
+        }
+      if(count==2){
+        System.out.println(i);
+      }
+      }
+  }
+}
+
+***********************************************************************************
+
+QUESTION 7 :
+
+import java.util.Scanner;
+
+public class ArmstrongCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int number = scanner.nextInt();
+        int original = number;
+
+        int digits = String.valueOf(number).length();
+
+        int sum = 0;
+        while (number > 0) {
+            int digit = number % 10;
+            sum += Math.pow(digit, digits);
+            number /= 10;
+        }
+
+        if (sum == original) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
+
+**************************************************************************************
+
+QUESTION 8 :
+
+import java.util.Scanner;
+
+public class SpecialNumberCheck {
+    public static int factorial(int n) {
+        int fact = 1;
+        for (int i = 2; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int number = scanner.nextInt();
+        int original = number;
+        int sum = 0;
+
+        while (number > 0) {
+            int digit = number % 10;
+            sum += factorial(digit);
+            number /= 10;
+        }
+
+        if (sum == original) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
+
+
+************************************************************************************
+
+QUESTION 9 :
+
+public class HelloWorldLoop {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 100; i++) {
+            if (i % 15 == 0) {
+                System.out.println("HelloWorld");
+            } else if (i % 3 == 0) {
+                System.out.println("Hello");
+            } else if (i % 5 == 0) {
+                System.out.println("World");
+            } else {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+*************************************************************************************
+
+QUESTION 10 :
+
+import java.util.Scanner;
+
+public class MarsNumberCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int number = scanner.nextInt();
+        int steps = 0;
+
+        while (number >= 10) {
+            int sum = 0;
+            while (number > 0) {
+                sum += number % 10;
+                number /= 10;
+            }
+            number = sum;
+            steps++;
+        }
+
+        if (steps % 2 == 0) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
