@@ -1,0 +1,69 @@
+import java.util.*;
+
+public class ArrayListMethodsDemo {
+    public static void main(String[] args) {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        // add(Object)
+        list.add("Java");
+        list.add("Python");
+
+        // add(int index, Object element)
+        list.add(1, "C++");
+
+        // addAll(Collection)
+        ArrayList<String> list2 = new ArrayList<>();
+        list2.add("HTML");
+        list2.add("CSS");
+        list.addAll(list2);
+
+        // contains()
+        System.out.println(list.contains("Java"));
+
+        // indexOf()
+        System.out.println(list.indexOf("Python"));
+
+        // lastIndexOf()
+        list.add("Java");
+        System.out.println(list.lastIndexOf("Java"));
+
+        // isEmpty()
+        System.out.println(list.isEmpty());
+
+        // set(int index, element)
+        list.set(0, "Java SE");
+
+        // remove(int index)
+        list.remove(1);
+
+        // remove(Object)
+        list.remove("CSS");
+
+        // removeIf()
+        list.removeIf(s -> s.startsWith("H"));
+
+        // size()
+        System.out.println(list.size());
+
+        // forEach()
+        list.forEach(System.out::println);
+
+        // toArray()
+        Object[] arr = list.toArray();
+
+        // retainAll()
+        ArrayList<String> keep = new ArrayList<>();
+        keep.add("Java SE");
+        list.retainAll(keep);
+
+        // clear()
+        list.clear();
+        System.out.println(list.isEmpty());
+
+        // ensureCapacity()
+        list.ensureCapacity(20);
+
+        // trimToSize()
+        list.trimToSize();
+    }
